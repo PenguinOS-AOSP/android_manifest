@@ -83,7 +83,7 @@
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="statix-staging" />
   <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="statix-staging" />
   <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="statix-staging" />
-  <project path="hardware/statix/compat" name="android_hardware_statix_compat" remote="statix-staging" />
+  <project path="hardware/lineage/compat" name="LineageOS/android_hardware_lineage_compat" remote="github" revision="lineage-24.0" />
   <project path="hardware/statix/interfaces" name="android_hardware_statix_interfaces" remote="statix" />
 
   <!-- Kernel -->
