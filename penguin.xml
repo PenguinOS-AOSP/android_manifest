@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes (PenguinOS GMS / AOSPA prebuilts) -->
+  <remote  name="blobs"
+           fetch="https://github.com/ThankYouMario/"
+           revision="calcite" />
+
+  <remote  name="blobs-gitlab"
+           fetch="https://gitlab.com/ThankYouMario/"
+           revision="calcite" />
+
+  <!-- AOSP projects carrying PenguinOS changes on top of android-17.0.0_r1 -->
+  <project path="build/release" name="android_build_release" remote="penguin-aosp" groups="pdk,tradefed,sysui-studio" />
+  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" remote="penguin-aosp" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="penguin-aosp" />
+  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="penguin-aosp" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="penguin-aosp" />
+  <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="penguin-aosp" />
+  <project path="system/memory/libmeminfo" name="android_system_memory_libmeminfo" remote="penguin-aosp" />
+  <project path="system/memory/lmkd" name="android_system_memory_lmkd" remote="penguin-aosp" />
+  <project path="system/netd" name="android_system_netd" remote="penguin-aosp" />
+  <project path="system/security" name="android_system_security" remote="penguin-aosp" />
+  <project path="system/update_engine" name="android_system_update_engine" remote="penguin-aosp" />
+
+  <!-- PenguinOS apps and services -->
+  <project path="packages/apps/Dialer" name="penguin_packages_apps_Dialer" remote="penguin" />
+  <project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="penguin" />
+  <project path="packages/apps/LMOFreeform" name="packages_apps_LMOFreeform" remote="penguin" />
+  <project path="packages/apps/ParanoidSense" name="packages_apps_ParanoidSense" remote="penguin" />
+  <project path="packages/apps/PenguinSetupWizard" name="packages_apps_PenguinSetupWizard" remote="penguin" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="penguin" />
+  <project path="packages/services/OmniJaw" name="packages_services_OmniJaw" remote="penguin" />
+  <project path="vendor/custom-preference" name="vendor_custom-preference" remote="penguin" />
+
+  <!-- Google Mobile Services / Pixel (PenguinOS) -->
+  <project path="vendor/gms" name="PenguinOS/android_vendor_gms" remote="codeberg" revision="celerity" clone-depth="1" />
+  <project path="vendor/google/pixel" name="android_vendor_google_pixel" remote="blobs" clone-depth="1" />
+  <project path="vendor/aospa/prebuilt" name="android_vendor_aospa_prebuilt" remote="blobs-gitlab" clone-depth="1" />
+
+</manifest>

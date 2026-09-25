@@ -15,6 +15,20 @@
            revision="cp2a"
            fetch="https://github.com/stx-staging/" />
 
+  <!-- GitHub (PenguinOS on AOSP) -->
+  <remote  name="penguin-aosp"
+           revision="celerity"
+           fetch="https://github.com/PENGUIN_AOSP_ORG/" />
+
+  <!-- GitHub (Project PenguinOS) -->
+  <remote  name="penguin"
+           revision="celerity"
+           fetch="https://github.com/Project-PenguinOS/" />
+
+  <!-- Codeberg -->
+  <remote  name="codeberg"
+           fetch="https://codeberg.org/" />
+
   <!-- GitLab -->
   <remote name="gitlab"
            fetch="https://gitlab.com/" />
@@ -30,7 +44,7 @@
   <project path="bionic" name="android_bionic" remote="statix-staging" />
 
   <!-- Build -->
-  <project path="build/make" name="android_build" remote="statix-staging" groups="pdk" >
+  <project path="build/make" name="android_build" remote="penguin-aosp">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -39,13 +53,13 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="android_build_soong" remote="statix-staging" groups="pdk,tradefed" >
+  <project path="build/soong" name="android_build_soong" remote="penguin-aosp">
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
   <!-- Device -->
-  <project path="device/manifests" name="android_device_manifests" remote="statix">
+  <project path="device/manifests" name="android_device_manifests" remote="penguin-aosp">
     <linkfile src="build.sh" dest="build.sh" />
   </project>
   <project path="device/statix/sepolicy" name="android_device_statix_sepolicy" remote="statix-staging" revision="cb" />
@@ -58,17 +72,14 @@
   <project path="external/wpa_supplicant_8" name="android_external_wpa_supplicant_8" remote="statix-staging" />
 
   <!-- Frameworks -->
-  <project path="frameworks/av" name="android_frameworks_av" remote="statix-staging" />
-  <project path="frameworks/base" name="platform_frameworks_base" remote="statix-staging" />
-  <project path="frameworks/native" name="android_frameworks_native" remote="statix-staging" />
-
-  <!-- Google Mobile Services -->
-  <project path="vendor/gms" name="StatiXOS/google-mobile-services" remote="gitea" revision="cp2a" clone-depth="1" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="penguin-aosp" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="penguin-aosp" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="penguin-aosp" />
 
   <!-- Hardware -->
   <project path="hardware/google/pixel" name="android_hardware_google_pixel" remote="statix-staging" />
   <project path="hardware/google/pixel-sepolicy" name="android_hardware_google_pixel-sepolicy" remote="statix-staging" />
-  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="statix-staging" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="penguin-aosp" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="statix-staging" />
   <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="statix-staging" />
   <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="statix-staging" />
@@ -79,21 +90,15 @@
   <project path="kernel/configs" name="android_kernel_configs" remote="statix-staging" />
 
   <!-- Manifest -->
-  <project path="manifest" name="android_manifest" remote="statix-staging" />
+  <project path="manifest" name="android_manifest" remote="penguin-aosp" />
 
   <!-- Packages -->
   <project path="packages/apps/Aperture" name="LineageOS/android_packages_apps_Aperture" remote="github" revision="lineage-23.2" />
-  <project path="packages/apps/BtHelper" name="android_packages_apps_BtHelper" remote="statix" />
-  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="statix-staging" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="statix-staging" />
-  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="statix-staging" />
-  <project path="packages/apps/Statix/ColorStub" name="android_packages_apps_Statix_ColorStub" remote="statix-staging" />
-  <project path="packages/apps/Statix/Launcher" name="android_packages_apps_Statix_Launcher" remote="statix-staging" />
-  <project path="packages/apps/Statix/Settings" name="android_packages_apps_Statix_Settings" remote="statix-staging" />
-  <project path="packages/apps/Statix/SystemUI" name="android_packages_apps_Statix_SystemUI" remote="statix-staging" />
-  <project path="packages/apps/Statix/Wallpapers" name="android_packages_apps_Statix_Wallpapers" remote="statix" />
-  <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="statix-staging" />
-  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" remote="statix-staging" />
+  <project path="packages/apps/Launcher3" name="android_packages_apps_Launcher3" remote="penguin-aosp" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="penguin-aosp" />
+  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="penguin-aosp" />
+  <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="penguin-aosp" />
+  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" remote="penguin-aosp" />
   <!--project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="statix" /-->
   <project path="packages/resources/devicesettings" name="android_packages_resources_devicesettings" remote="statix" />
 
@@ -107,20 +112,19 @@
   <project path="bootable/recovery" name="android_bootable_recovery" remote="statix-staging" />
 
   <!-- System -->
-  <project path="system/core" name="android_system_core" remote="statix-staging" />
+  <project path="system/core" name="android_system_core" remote="penguin-aosp" />
   <project path="system/fs/fs_mgr" name="android_system_fs_fs_mgr" remote="statix-staging" />
   <project path="system/libhidl" name="android_system_libhidl" remote="statix-staging" />
   <project path="system/media" name="android_system_media" remote="statix-staging" />
   <project path="system/memory/libion" name="android_system_memory_libion" remote="statix-staging" />
-  <project path="system/sepolicy" name="android_system_sepolicy" remote="statix-staging" />
+  <project path="system/sepolicy" name="android_system_sepolicy" remote="penguin-aosp" />
 
   <!-- Tools -->
   <project path="tools/extract-utils" name="LineageOS/android_tools_extract-utils" remote="github" revision="lineage-23.2" />
 
   <!-- Vendor -->
   <project path="vendor/google/interfaces" name="android_vendor_google_interfaces" remote="statix" />
-  <project path="vendor/statix" name="android_vendor_statix" remote="statix-staging">
+  <project path="vendor/penguin" name="android_vendor_penguin" remote="penguin-aosp">
     <linkfile src="build/stop_scan.mk" dest="kernel/Android.mk" />
   </project>
-  <project path="vendor/statix-prebuilts" name="android_vendor_statix-prebuilts" remote="statix-staging" />
 </manifest>

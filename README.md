@@ -1,11 +1,17 @@
-[<center><img src="https://raw.githubusercontent.com/sourajitk/STX-Logo/main/stx-2025.png" height="50%" width="50%;" /></center>](https://github.com/StatiXOS)
+## PenguinOS (AOSP) ##
+PenguinOS features ported onto a pure AOSP base, using the StatiX build system.
+StatiX device trees work with a few renames:
+
+* `statix_<device>.mk` -> `penguin_<device>.mk` and `PRODUCT_NAME := penguin_<device>`
+* `vendor/statix/config/*.mk` -> `vendor/penguin/config/*.mk`
+* `STATIX_*` variables -> `PENGUIN_*`
 
 ## Building Android ##
 Your one-stop destination for all the documentation about building Android can be found [here](https://source.android.com/setup/build/building).
 
 ## Repo Init ##
 ```bash
-repo init -u https://github.com/stx-staging/android_manifest.git -b cp2a --git-lfs
+repo init -u https://github.com/PENGUIN_AOSP_ORG/android_manifest.git -b celerity --git-lfs
 ```
 ## Sync Source ##
 ```bash
@@ -14,9 +20,8 @@ repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j$(nproc --
 ## Build Time (Linux x86_64 ONLY) ##
 ```bash
 . build/envsetup.sh
-brunch statix_<DEVICE>-<RELEASE>-userdebug (or statix_<DEVICE>-<RELEASE>-user)
+brunch penguin_<DEVICE>-cp2a-userdebug
 ```
-#### For projects using this manifest, `<RELEASE>` is `cp2a`.
 ### Submitting Patches ###
 
 Patches are welcomed here at StatiXOS.
