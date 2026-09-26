@@ -17,6 +17,8 @@
   <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" remote="penguin-aosp" />
   <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="penguin-aosp" />
   <project path="packages/services/Telephony" name="android_packages_services_Telephony" remote="penguin-aosp" />
+  <project path="system/bpf" name="android_system_bpf" remote="penguin-aosp" />
+  <project path="system/memory/libdmabufheap" name="android_system_memory_libdmabufheap" remote="penguin-aosp" />
   <project path="system/memory/libmeminfo" name="android_system_memory_libmeminfo" remote="penguin-aosp" />
   <project path="system/memory/lmkd" name="android_system_memory_lmkd" remote="penguin-aosp" />
   <project path="system/netd" name="android_system_netd" remote="penguin-aosp" />
