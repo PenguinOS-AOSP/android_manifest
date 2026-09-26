@@ -11,7 +11,7 @@ Your one-stop destination for all the documentation about building Android can b
 
 ## Repo Init ##
 ```bash
-repo init -u https://github.com/PENGUIN_AOSP_ORG/android_manifest.git -b celerity --git-lfs
+repo init -u https://github.com/PenguinOS-AOSP/android_manifest.git -b celerity --git-lfs
 ```
 ## Sync Source ##
 ```bash
